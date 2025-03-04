@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satcher and Sarah's Wedding</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 800px;
+            background-color: white;
+            text-align: center;
+        }
+        .header {
+            width: 100%;
+            display: block;
+        }
+        .nav-container {
+            background-color: #ffcf62; /* Background behind the buttons */
+            margin: 0; /* Removes space between the header and buttons */
+            padding: 0; /* Ensures tight spacing */
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            margin: 0; /* Removes any additional spacing */
+        }
+        .nav-bar a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            color: forestgreen;
+            border: 2px solid #c88004; /* Border color */
+            background: linear-gradient(to bottom, #FFFFF3, #E2C486); /* Vertical gradient */
+        }
+        .nav-bar a.active {
+            color: darkred;
+        }
+        .separator {
+            background-color: #c88004;
+            height: 5px;
+            margin: 0;
+        }
+        .wide-separator {
+            background-color: #ffcf62;
+            height: 20px;
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+            text-align: left;
+        }
+        .section-box {
+            border: 2px solid #FFD475;
+            margin: 20px 0;
+            position: relative;
+            padding: 15px;
+        }
+        .header-box {
+            position: absolute;
+            top: -18px;
+            left: 15px;
+            background: white;
+            padding: 0 10px;
+        }
+        h2 {
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            color: #0A4E25;
+            font-size: 1.5em;
+            margin: 0;
+        }
+        .body-box {
+            font-family: Verdana, sans-serif;
+            color: #333333;
+            text-align: left;
+            margin-top: 20px;
+        }
+        p {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="images/Artboard 1.png" alt="Wedding Banner" class="header">
+        <div class="nav-container">
+            <div class="nav-bar">
+                <a href="index.html">Wedding</a>
+                <a href="weekend-events.html" class="active">Weekend Events</a>
+                <a href="accommodation.html">Accommodation and Transport</a>
+                <a href="travel-recs.html">Local Recs</a>
+                <a href="rsvp.html">RSVP</a>
+                <a href="registry.html">Registry</a>
+            </div>
+            <div class="separator"></div>
+        </div>
+        <div class="content">
+            <div class="section-box">
+                <div class="header-box">
+                    <h2>Pre-wedding Dinner</h2>
+                </div>
+                <div class="body-box">
+                    <p><strong>Casual dinner and drinks at <a href="https://noriawines.com/" target="_blank">Noria Wines</a></strong></p>
+                    <p><strong>Date & Time:</strong> Friday, June 27, from 5-8 PM</p>
+                    <p><strong>Location:</strong> Noria Wines, 725 Unit A, Gilman St., Berkeley, CA 94710</p>
+                    <p>Accessible by bus or short drive from hotels, street parking available – <a href="https://maps.app.goo.gl/rSTvy5YMSCDdUpNP7" target="_blank">Click here for directions</a></p>
+                    <img src="images/wine-tasting.jpg" style="width:70%; display:block; max-width:400px; margin:20px auto;" alt="Wine tasting on our engagement trip in Napa">
+                    <p style="text-align:center;"><em>Wine tasting on our engagement trip in Napa</em></p>
+                </div>
+            </div>
+
+            <div class="section-box">
+                <div class="header-box">
+                    <h2>Post-wedding Brunch</h2>
+                </div>
+                <div class="body-box">
+                    <p><strong>Bagels and specialty coffee in our driveway!</strong></p>
+                    <p><strong>Date & Time:</strong> Sunday, June 29, from 10 AM - 1 PM</p>
+                    <p><strong>Location:</strong> Our driveway (near North Berkeley BART), walking distance from both hotels</p>
+                    <img src="images/cro.jpg" style="width:70%; max-width:400px; display:block; margin:20px auto;">
+                </div>
+            </div>
+        </div>
+        <div class="separator"></div>
+        <div class="wide-separator"></div>
+    </div>
+<script>
+    // Store the token from the URL in sessionStorage
+    (function preserveToken() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get("token");
+        if (token) {
+            sessionStorage.setItem("rsvpToken", token);
+            // Rewrite URL to clean up (removing token from homepage URL)
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    })();
+</script>
+</body>
+</html>

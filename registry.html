@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satcher and Sarah's Wedding</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 800px;
+            background-color: white;
+            text-align: center;
+        }
+        .header {
+            width: 100%;
+            display: block;
+        }
+        .nav-container {
+            background-color: #ffcf62; /* Background behind the buttons */
+            margin: 0; /* Removes space between the header and buttons */
+            padding: 0; /* Ensures tight spacing */
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            margin: 0; /* Removes any additional spacing */
+        }
+        .nav-bar a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            color: forestgreen;
+            border: 2px solid #c88004; /* Border color */
+            background: linear-gradient(to bottom, #FFFFF3, #E2C486); /* Vertical gradient */
+        }
+        .nav-bar a.active {
+            color: darkred;
+        }
+        .separator {
+            background-color: #c88004;
+            height: 5px;
+            margin: 0;
+        }
+        .wide-separator {
+            background-color: #ffcf62;
+            height: 20px;
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+            text-align: left;
+        }
+        .section-box {
+            border: 2px solid #FFD475;
+            margin: 20px 0;
+            position: relative;
+            padding: 15px;
+        }
+        .header-box {
+            position: absolute;
+            top: -18px;
+            left: 15px;
+            background: white;
+            padding: 0 10px;
+        }
+        h2 {
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            color: #0A4E25;
+            font-size: 1.5em;
+            margin: 0;
+        }
+        .body-box {
+            font-family: Verdana, sans-serif;
+            color: #333333;
+            text-align: left;
+            margin-top: 20px;
+        }
+        p {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="images/Artboard 1.png" alt="Wedding Banner" class="header">
+        <div class="nav-container">
+            <div class="nav-bar">
+                <a href="index.html">Wedding</a>
+                <a href="weekend-events.html">Weekend Events</a>
+                <a href="accommodation.html">Accommodation and Transport</a>
+                <a href="travel-recs.html">Local Recs</a>
+                <a href="rsvp.html">RSVP</a>
+                <a href="registry.html" class="active">Registry</a>
+            </div>
+            <div class="separator"></div>
+        </div>
+        <div class="content">
+            <div class="section-box">
+                <div class="header-box">
+                    <h2>Our Registry</h2>
+                </div>
+                <div class="body-box">
+                    <p>We feel so lucky to have you celebrate this special moment with us—your presence at our wedding and in our lives is more than enough. Truly, no gifts are necessary!</p>
+                    <p>However, if you would like to mark the occasion with a gift, it would mean a lot to us if you considered contributing to these organizations. Your generosity will help make a difference in causes that are deeply meaningful to us.</p>
+                </div>
+            </div>
+
+            <div class="section-box">
+                <div class="header-box">
+                    <h2>Animal Charity Evaluators</h2>
+                </div>
+                <div class="body-box" style="text-align: center;">
+                    <img src="images/ace.jpeg" alt="Animal Charity Evaluators Logo" style="width: 400px; margin-bottom: 10px;">
+                    <ul style="text-align: left; display: inline-block;">
+                        <li><strong>Mission:</strong> ACE evaluates and recommends the most effective animal advocacy organizations to reduce animal suffering.</li>
+                        <li><strong>Estimated Impact:</strong> Donations to ACE-recommended charities support high-impact organizations like <em>The Humane League</em>, which has successfully pushed major global companies (e.g., Starbucks, Marriott) to adopt cage-free egg policies, and <em>Legal Impact for Chickens</em>, which takes legal action to enforce animal welfare laws and improve conditions for farmed chickens.</li>
+                    </ul>
+                    <p><a href="https://www.every.org/animalcharityevaluators/f/help-reduce-suffering" target="_blank">Donate to Animal Charity Evaluators</a></p>
+                </div>
+            </div>
+
+            <div class="section-box">
+                <div class="header-box">
+                    <h2>GiveWell</h2>
+                </div>
+                <div class="body-box" style="text-align: center;">
+                    <img src="images/givewell.jpg" alt="GiveWell Logo" style="width: 400px; margin-bottom: 10px;">
+                    <ul style="text-align: left; display: inline-block;">
+                        <li><strong>Mission:</strong> GiveWell identifies and recommends charities that save or improve lives the most per dollar donated, primarily focusing on global health and poverty alleviation.</li>
+                        <li><strong>Estimated Impact:</strong> GiveWell estimates that donations to its top charities can <em>save a life for approximately $3,000 to $5,500</em>, depending on the program. For example, funding malaria prevention in Nigeria is estimated at around <em>$3,000 per life saved</em>.</li>
+                    </ul>
+                    <p><a href="https://www.every.org/givewell/f/satcher-and-sarahs-wedding" target="_blank">Donate to GiveWell</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    // Store the token from the URL in sessionStorage
+    (function preserveToken() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get("token");
+        if (token) {
+            sessionStorage.setItem("rsvpToken", token);
+            // Rewrite URL to clean up (removing token from homepage URL)
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    })();
+</script>
+</body>

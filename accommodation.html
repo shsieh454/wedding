@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satcher and Sarah's Wedding</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 800px;
+            background-color: white;
+            text-align: center;
+        }
+        .header {
+            width: 100%;
+            display: block;
+        }
+        .nav-container {
+            background-color: #ffcf62; /* Background behind the buttons */
+            margin: 0; /* Removes space between the header and buttons */
+            padding: 0; /* Ensures tight spacing */
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            margin: 0; /* Removes any additional spacing */
+        }
+        .nav-bar a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            color: forestgreen;
+            border: 2px solid #c88004; /* Border color */
+            background: linear-gradient(to bottom, #FFFFF3, #E2C486); /* Vertical gradient */
+        }
+        .nav-bar a.active {
+            color: darkred;
+        }
+        .separator {
+            background-color: #c88004;
+            height: 5px;
+            margin: 0;
+        }
+        .wide-separator {
+            background-color: #ffcf62;
+            height: 20px;
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+            text-align: left;
+        }
+        .section-box {
+            border: 2px solid #FFD475;
+            margin: 20px 0;
+            position: relative;
+            padding: 15px;
+        }
+        .header-box {
+            position: absolute;
+            top: -18px;
+            left: 15px;
+            background: white;
+            padding: 0 10px;
+        }
+        h2 {
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            color: #0A4E25;
+            font-size: 1.5em;
+            margin: 0;
+        }
+        .body-box {
+            font-family: Verdana, sans-serif;
+            color: #333333;
+            text-align: left;
+            margin-top: 20px;
+        }
+        p {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="images/Artboard 1.png" alt="Wedding Banner" class="header">
+        <div class="nav-container">
+            <div class="nav-bar">
+                <a href="index.html">Wedding</a>
+                <a href="weekend-events.html">Weekend Events</a>
+                <a href="accommodation.html" class="active">Accommodation and Transport</a>
+                <a href="travel-recs.html">Local Recs</a>
+                <a href="rsvp.html">RSVP</a>
+                <a href="registry.html">Registry</a>
+            </div>
+            <div class="separator"></div>
+        </div>
+        <div class="content">
+            <div class="section-box">
+                <div class="header-box">
+                    <h2>Hotels</h2>
+                </div>
+                <div class="body-box">
+                    <p>We have arranged discounted room blocks at two hotels in Berkeley:</p>
+
+                    <h3>Residence Inn Berkeley</h3>
+                    <p>A recently built 4-star Marriott hotel, centrally located in downtown Berkeley.</p>
+                    <p><strong>Booking deadline:</strong> June 1</p>
+                    <p><a href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1726764691559&key=GRP&guestreslink2=true" target="_blank">Book here</a></p>
+
+                    <h3>Aiden by Best Western Berkeley</h3>
+                    <p>A budget-friendly option! Recently built 3-star hotel in North Berkeley, within walking distance of downtown Berkeley.</p>
+                    <p><strong>Booking deadline:</strong> May 15</p>
+                    <p><a href="https://www.bestwestern.com/en_US/book/hotel-rooms.05754.html?groupId=D32PS4N0" target="_blank">Book here</a></p>
+                </div>
+            </div>
+
+            <div class="section-box">
+                <div class="header-box">
+                    <h2>Airports</h2>
+                </div>
+                <div class="body-box">
+                    <p>Nearby airports include San Francisco International Airport (SFO) and Oakland International Airport (OAK).</p>
+                </div>
+            </div>
+
+            <div class="section-box">
+                <div class="header-box">
+                    <h2>Public Transit</h2>
+                </div>
+                <div class="body-box">
+                    <p>For public transit (BART trains and AC Transit buses), you can <a href="https://www.clippercard.com/ClipperWeb/pay-with-phone" target="_blank">add a virtual Clipper Card to your Apple or Google Wallet</a> or purchase a plastic Clipper Card at the BART station. Note that plastic cards incur an initial $3 fee.</p>
+
+                    <h3>From SFO on public transit:</h3>
+                    <p>Take the BART Richmond Line (Red) direct to downtown Berkeley (for Residence Inn) or North Berkeley (for Aiden Hotel). This takes 60–90 minutes.</p>
+
+                    <h3>From SFO by Uber:</h3>
+                    <p>Follow signs in the airport to Level 5 of the Domestic Garage. Typically takes 35–60 minutes depending on traffic.</p>
+
+                    <h3>From OAK on public transit:</h3>
+                    <p>Take the BART shuttle to Coliseum, then take the Orange Line to downtown Berkeley (for Residence Inn) or North Berkeley (for Aiden Hotel).</p>
+
+                    <h3>From OAK by Uber:</h3>
+                    <p>Exit the airport and cross the street to the third curb to reach the Uber pickup area. Usually takes about 25 minutes to get to Berkeley.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    // Store the token from the URL in sessionStorage
+    (function preserveToken() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get("token");
+        if (token) {
+            sessionStorage.setItem("rsvpToken", token);
+            // Rewrite URL to clean up (removing token from homepage URL)
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    })();
+</script>
+</body>
