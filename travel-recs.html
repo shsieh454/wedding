@@ -69,12 +69,29 @@
             position: relative;
             padding: 15px;
         }
+        /* Default style (for desktop) */
         .header-box {
             position: absolute;
-            top: -18px;
+            top: -18px; /* Keep it overlapping the box */
             left: 15px;
             background: white;
             padding: 0 10px;
+        }
+
+        /* Mobile-friendly adjustment */
+        @media (max-width: 600px) {
+            .header-box {
+                position: relative;  /* Remove absolute positioning for smaller screens */
+                top: 0;  /* Prevent overlap */
+                left: 0;
+                text-align: center; /* Center header */
+                display: inline-block;
+                margin-bottom: 5px; /* Add spacing */
+                padding: 5px 10px; /* Adjust padding for better fit */
+            }
+            h2 {
+                font-size: 1.2em; /* Reduce size slightly for better spacing */
+            }
         }
         h2 {
             font-family: Arial, sans-serif;
